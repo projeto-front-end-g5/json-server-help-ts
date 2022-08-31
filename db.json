@@ -4,8 +4,46 @@
       "email": "kenzinho@mail.com",
       "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
       "name": "Kenzinho",
-      "age": 38,
+      "github": "...",
+      "contact?": "",
       "id": 1
+    }
+  ],
+  "solutions": [
+    {
+      "title": "Como tipar um useState",
+      "content": {
+        "text": "...",
+        "code": "..."
+      },
+      "created_at": "",
+      "updated_at": "",
+      "tags": ["hooks"],
+      "likes": 0,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "title": "Como tipar um useState",
+      "content": {
+        "text": "...",
+        "code": "..."
+      },
+      "created_at": "",
+      "updated_at": "",
+      "tags": ["interface", "functions"],
+      "userId": 1,
+      "id": 2,
+      "likes": 0
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "content": "...",
+      "created_at": "...",
+      "solutionId": 1
     }
   ]
 }
