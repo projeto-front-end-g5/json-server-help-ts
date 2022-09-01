@@ -16,9 +16,9 @@ A URL base da API é https://json-server-project-help-ts.herokuapp.com/
 
 ## Rotas que não precisam de autenticação
 
-<h2 align ='center'> Listando soluções e comentários cadastrados </h2>
+<h2 align ='center'> Listando cadastrados </h2>
 
-Nessa aplicação, o usuário sem fazer login ou se cadastrar, consegue visualizar as outras soluções e comentários já cadastrados na plataforma, podemos acessar da seguinte forma:
+Nessa aplicação, o usuário sem fazer login ou se cadastrar, consegue visualizar as outras soluções, comentários e usuários já cadastrados na plataforma, podemos acessar da seguinte forma:
 
 `GET /solutions - FORMATO DA RESPOSTA - STATUS 200`
 
@@ -260,4 +260,4 @@ Rotas que necessitam de autorização(token) deve ser informado no cabeçalho da
 
 `Delete /users/id (id do Usuário a ser editado) - Não é necessário passar corpo na requisição!`
 
-<h1>Escrito e criado por - team campeonateiros!! </h1>
+<h1>Escrito e criado por - team Five!! </h1>
