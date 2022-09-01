@@ -79,43 +79,59 @@ Nessa aplicação, o usuário sem fazer login ou se cadastrar, consegue visualiz
 ]
 ```
 
+`GET /users - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+[
+  {
+    "email": "kenzinho@mail.com",
+    "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
+    "name": "Kenzinho",
+    "github": "...",
+    "contact?": "",
+    "id": 1
+  }
+]
+```
+
 <h2 align ='center'> Criação de usuário </h2>
-### Cadastro
+## Cadastro
 
 `POST /register - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "email": "danone@email.com",
+  "email": "kenzer@gmail.com",
   "password": "123456",
-  "name": "Danone FC",
-  "city": "Palhoça"
+  "name": "Kenzinho",
+  "github": "www.github.com/Kenzinho",
+  "contact": "(11)99999-9999"
 }
 ```
 
-Caso o cadastro seja feito de forma correta, a resposta será assim:
+Caso o cadastro seja realizado de forma correta, a resposta será assim:
 
 `POST /users - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbm9uZUBlbWFpbC5jb20iLCJpYXQiOjE2NjE5MDA2NjAsImV4cCI6MTY2MTkwNDI2MCwic3ViIjoiMiJ9.ZlkLFQiR3QFk4p-g0e4CNxh-fVfudgGZ0i8JVkFUPVs",
-  "user": {
-    "email": "danone@email.com",
-    "name": "Danone FC",
-    "city": "Palhoça",
-    "id": 2
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hQGdtYWlsLmNvbSIsImlhdCI6MTY2MTk4ODQxMywiZXhwIjoxNjYxOTkyMDEzLCJzdWIiOiIyIn0.meRv3qYnZMkfjkTIAcN7IBR2diFzGg9gYt2EZWjHdqw",
+	"user": {
+		"email": "kenzer@gmail.com",
+		"name": "Kenzinho",
+		"github": "www.github.com/Kenzinho",
+		"contact": "(11)99999-9999",
+		"id": 2
+	}
   }
 }
 ```
-
-1. O campo "city": deve receber a cidade de origem do time cadastrado.
 
 <h2 align = "center"> Login </h2>
 
 ```json
 {
-  "email": "danone@email.com",
+  "email": "kenzer@gmail.com",
   "password": "123456"
 }
 ```
@@ -126,19 +142,18 @@ Caso de tudo certo, a resposta será assim:
 
 ```json
 {
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbm9uZUBlbWFpbC5jb20iLCJpYXQiOjE2NjE5MDY0NTEsImV4cCI6MTY2MTkxMDA1MSwic3ViIjoiMSJ9.xH2G55cvVVoIf6oKF10bgG-vmuUyBfBfNeYQebxtnT0",
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnppbmhvQG1haWwuY29tIiwiaWF0IjoxNjYxOTg2MzM4LCJleHAiOjE2NjE5ODk5MzgsInN1YiI6IjEifQ.R1CTslLSJuSYBfSAYlkd6-Wvgci2ha0BapiBOtLCuAs",
   "user": {
-    "email": "danone@email.com",
-    "name": "Danone FC",
-    "city": "Palhoça",
-    "players": ["Cristiano", "Ronaldo", "Messi", "Neymar"],
-    "url_image": "https://i.pinimg.com/564x/a2/df/be/a2dfbe8df09c969ec925b8cf1fa6ab47.jpg",
-    "id": 1
+    "email": "kenzer@gmail.com",
+    "name": "Kenzinho",
+    "github": "www.github.com/Kenzinho",
+    "contact": "(11)99999-9999",
+    "id": 2
   }
 }
 ```
 
-Com esta resposta, temos duas informações importantes, token e user, sendo que ambos podem ser guardados no localStorage para fazer a gestão do usuario no Frontend.
+Com esta resposta, temos duas informações importantes, token e user, sendo que ambos podem ser guardados no localStorage para fazer a gestão do usuário no Frontend.
 
 ## Rotas que necessitam de autorização
 
@@ -146,124 +161,127 @@ Rotas que necessitam de autorização(token) deve ser informado no cabeçalho da
 
 > Authorization: Bearer {token}
 
-<h2 align ='center'> Criar Evento (token) </h2>
+<h2 align ='center'> Criar Solução </h2>
 
-`Post /events - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "category": "FUTEBOL",
-  "userId": 2,
-  "name": "Torneio da Galera",
-  "localization": "Ginásio Nazareno - Palhoça/sc",
-  "date-start": "30/08/2022",
-  "date-end": "30/08/2022"
-}
-```
-
-`Post /events - FORMATO DA RESPOSTA - STATUS 200`
+`POST /solutions - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "category": "FUTEBOL",
-  "userId": 2,
-  "name": "Torneio da Galera",
-  "localization": "Ginásio Nazareno - Palhoça/sc",
-  "date-start": "30/08/2022",
-  "date-end": "30/08/2022",
-  "id": 2
+  {
+      "title": "Como tipar uma function",
+      "content": {
+        "text": "...",
+        "code": "..."
+      },
+      "created_at": "31/08/2022",
+      "updated_at": "31/08/2022",
+      "tags": ["function"],
+      "likes": 0,
+      "userId": 2
+ }
 }
 ```
 
-1. o campo - "category" deve receber respectivamente os sequintes tipos de evento:
-
-- "Futebol"
-- "Voleibol"
-- "Basquete"
-
-2. o campo "userId": é o ID do usuário que estiver criando o evento, pois somente ele consegue adicionar informações relacionados ao evento.
-
-<h2 align ='center'> Atualizando o Evento (token) </h2>
-
-`Patch /events/id (id do evento a ser editado) - FORMATO DA REQUISIÇÃO`
+`POST /solutions - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
-  "image": "",
-  "informations": [
-    {
-      "Inscrição": "R$ 100,00",
-      "Premiações": "Troféu e medalha para 1° e 2° lugar",
-      "Quantidade": "Limite de 12 times participantes",
-      "Localização": "Esquina do bar Madalena"
-    }
-  ],
-  "teams": ["Danone FC", "Gueto FC", "Galaticos"]
+  {
+	"title": "Como tipar uma function",
+	"content": {
+		"text": "...",
+		"code": "..."
+	},
+	"created_at": "31/08/2022",
+	"updated_at": "31/08/2022",
+	"tags": ["function"],
+	"likes": 0,
+    "userId": 2,
+	"id": 3
+}
 }
 ```
 
-`Patch /events - FORMATO DA RESPOSTA - STATUS 200`
+1. o campo - "tags" deve receber um, ou mais, dos seguintes tipos:
+
+- "hooks"
+- "function"
+- "interface"
+- -
+
+2. o campo "userId": é o ID do usuário que estiver criando a solução.
+
+<h2 align ='center'> Atualizando a solução </h2>
+
+`PATCH /solutions/id (id do evento a ser editado) - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "category": "Futebol",
-  "userId": 3,
-  "name": "Copa doss cria",
-  "localization": "Morro do alemão",
-  "date-start": "03/09/2022",
-  "date-end": "03/09/2022",
-  "id": 2,
-  "informations": [
-    {
-      "Inscrição": "R$ 100,00",
-      "Premiações": "Troféu e medalha para 1° e 2° lugar",
-      "Quantidade": "Limite de 12 times participantes",
-      "Localização": "Esquina do bar Madalena"
-    }
-  ],
-  "teams": ["Danone FC", "Gueto FC", "Galaticos"]
+  {
+	"title": "Como tipar uma function - Editado",
+	"content": {
+		"text": "...",
+		"code": "..."
+	},
+	"created_at": "31/08/2022",
+	"updated_at": "31/08/2022",
+	"tags": ["function"],
+	"likes": 0,
+	"userId": 2
+}
 }
 ```
 
-1. O campo "informations": deve receber um objeto com as seguintes informações:
-
-- "Inscrição" - valor da inscrição do evento
-- "Premiações" - quais são as premiações
-- "Quantidade" - limite de participantes
-- "Localização" - endereço do evento
-
-2. O campo "teams" - recebe um array dos times que estão participando do evento!
-
-<h2 align ='center'> Deletando o Evento (token) </h2>
-
-`Delete /events/id (id do evento a ser editado) - Não é necessário passar corpo na requisição!`
-
-<h2 align ='center'> Atualizando o usuário (token) </h2>
-
-`Patch /users/id (id do Usuário a ser editado) - FORMATO DA REQUISIÇÃO`
+`PATCH /solutions/id - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 {
-  "players": ["Zezin", "Anão", "Canhotin", "Vissoto"],
-  "url_image": "https://thumbs.dreamstime.com/z/ilustra%C3%A7%C3%A3o-do-vetor-da-silhueta-bola-voleibol-isolada-no-branco-119929868.jpg"
+  {
+	"title": "Como tipar uma function - Editado",
+	"content": {
+		"text": "...",
+		"code": "..."
+	},
+	"created_at": "31/08/2022",
+	"updated_at": "31/08/2022",
+	"tags": ["function"],
+	"userId": 2,
+	"id": 3,
+	"likes": 0
+}
 }
 ```
 
-`Patch /users/id (id do Usuário a ser editado) - FORMATO DA RESPOSTA - STATUS 200`
+<h2 align ='center'> Deletando a solução </h2>
+
+`DELETE /solutions/id (id do evento a ser editado) - Não é necessário passar corpo na requisição!`
+
+<h2 align ='center'> Atualizando o usuário </h2>
+
+`PATCH /users/id (id do Usuário a ser editado) - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
-  "email": "canela@mail.com",
-  "password": "$2a$10$l7lutElDxqAexWlpmo.OjeiI26h2fILW8rrGlW0B18YY3Xa3BjBVa",
-  "name": "Só canela FC",
-  "city": "São Paulo",
-  "id": 3,
-  "players": ["Zezin", "Anão", "Canhotin", "Vissoto"],
-  "url_image": ""
+  "name": "Kenzinha",
+  "github": "www.github.com/Kenzinha",
+  "contact": "(99)11111-1111"
 }
 ```
 
-<h2 align ='center'> Deletando o Usuário (token) </h2>
+`PATCH /users/id (id do Usuário a ser editado) - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+{
+  "email": "kenzer@gmail.com",
+  "password": "$2a$10$NjRK6KkNGX.bT1Q9wYNxGO.fQv1z/L1f53G5YqZVGQmrZejoOCdbC",
+  "name": "Kenzinha",
+  "github": "www.github.com/Kenzinha",
+  "contact": "(99)11111-1111",
+  "id": 3
+}
+```
+
+<h2 align ='center'> Deletando o Usuário</h2>
 
 `Delete /users/id (id do Usuário a ser editado) - Não é necessário passar corpo na requisição!`
 
