@@ -16,34 +16,9 @@ A URL base da API é https://json-server-project-help-ts.herokuapp.com/
 
 ## Rotas que não precisam de autenticação
 
-<h2 align ='center'> Listando times cadastrados </h2>
+<h2 align ='center'> Listando soluções e comentários cadastrados </h2>
 
-Nessa aplicação, o usuário sem fazer login ou se cadastrar, consegue visualizar os outros times já cadastrados na plataforma, na API podemos acesssar a lista da seguinte forma:
-
-<!-- `GET /users - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-[
-    {
-      "email": "danone@email.com",
-      "password": "$2a$10$1yak2vwsO2XTyMshwCkpBONT5X3Qr1KsJGWmYd9k6NlwFx9TyVdZy",
-      "name": "Danone FC",
-      "city": "Palhoça",
-      "players": ["Cristiano", "Ronaldo", "Messi", "Neymar"],
-      "url_image": "https://i.pinimg.com/564x/a2/df/be/a2dfbe8df09c969ec925b8cf1fa6ab47.jpg",
-      "id": 1
-    },
-    {
-      "email": "kenzieclub@kenzie.com",
-      "password": "$2a$10$1yak2vwsO2XTyMshwCkpBONT5X3Qr1KsJGWmYd9k6NlwFx9TyVdZy",
-      "name": "Danone FC",
-      "city": "Palhoça",
-      "players": ["Tsunode", "Wesley", "4lysson", "Vilson"],
-      "url_image": "https://veja.abril.com.br/wp-content/uploads/2019/12/1.jpg",
-      "id": 2
-    }
-]
-``` -->
+Nessa aplicação, o usuário sem fazer login ou se cadastrar, consegue visualizar as outras soluções e comentários já cadastrados na plataforma, podemos acessar da seguinte forma:
 
 `GET /solutions - FORMATO DA RESPOSTA - STATUS 200`
 
