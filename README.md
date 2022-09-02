@@ -181,9 +181,8 @@ Rotas que necessitam de autorização(token) deve ser informado no cabeçalho da
 - "hooks"
 - "function"
 - "interface"
-- -
 
-2. o campo "userId": é o ID do usuário que estiver criando a solução.
+1. o campo "userId": é o ID do usuário que estiver criando a solução.
 
 <h2 align ='center'> Atualizar solução </h2>
 
