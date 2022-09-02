@@ -91,13 +91,12 @@ Caso o cadastro seja realizado de forma correta, a resposta será assim:
 ```json
 {
   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hQGdtYWlsLmNvbSIsImlhdCI6MTY2MTk4ODQxMywiZXhwIjoxNjYxOTkyMDEzLCJzdWIiOiIyIn0.meRv3qYnZMkfjkTIAcN7IBR2diFzGg9gYt2EZWjHdqw",
-	"user": {
-		"email": "kenzer@gmail.com",
-		"name": "Kenzinho",
-		"github": "www.github.com/Kenzinho",
-		"contact": "(11)99999-9999",
-		"id": 2
-	}
+  "user": {
+    "email": "kenzer@gmail.com",
+    "name": "Kenzinho",
+    "github": "www.github.com/Kenzinho",
+    "contact": "(11)99999-9999",
+    "id": 2
   }
 }
 ```
