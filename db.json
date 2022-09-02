@@ -7,43 +7,111 @@
       "github": "...",
       "contact": "",
       "id": 1
+    },
+    {
+      "email": "sara@kenzie.com",
+      "password": "$2a$10$armagg8Zy7Qqg6UtVWxGTecJRtZQEykxYMCMeW6SjetaAfFMl0KVq",
+      "name": "Kenzinho",
+      "github": "Este link foi editado",
+      "contact": "",
+      "id": 2,
+      "avatar_URL": ""
+    },
+    {
+      "email": "sofia@kenzie.com",
+      "password": "$2a$10$1iczkSyuypEoVXKvsjUn9.UtacfYe.lu.eaW/vbJy3vgBkUDm9gSq",
+      "name": "Sofia",
+      "github": "www.github.com/Sofia",
+      "contact": "(11)99999-9999",
+      "id": 3
+    },
+    {
+      "email": "natalia@kenzie.com",
+      "password": "$2a$10$GyYX1vqqZ5.3qIWaqJjIi.3gD1jzrlctbNGlP.cT1BRc3uTy3/Clu",
+      "name": "Natalia",
+      "github": "www.github.com/Natalia",
+      "contact": "(11)99999-9999",
+      "id": 4
+    },
+    {
+      "email": "daniel@kenzie.com",
+      "password": "$2a$10$ti.1ou/h4aeu.EDxVsnSceYrpK2aTWP2EEsrYGDAb1mcCGUJsnYvu",
+      "name": "Daniel",
+      "github": "www.github.com/Daniel",
+      "contact": "(11)99999-9999",
+      "id": 5
+    },
+    {
+      "email": "patrick@kenzie.com",
+      "password": "$2a$10$bQbfC.BUDOHpHN2FwLrtg.uZntHOO6dqLEeV.98cIgA60GSvPLusK",
+      "name": "Patrick",
+      "github": "www.github.com/Patrick",
+      "contact": "(11)99999-9999",
+      "id": 6
     }
   ],
   "solutions": [
     {
-      "title": "Como tipar um useState",
+      "title": "Como tipar um useState?",
       "content": {
-        "text": "...",
-        "code": "..."
+        "text": "O formato do state todo mundo já conhece: [example, setExample] = useState(''). Caso seja apenas uma string, você pode tipar assim: [example, setExample] = useState<string>(“”). (No entanto o typescript já deduziria que a tipagem é string, então não é obrigatório colocar o <string>. Caso seja apenas um booleano, você pode tipar assim: [example, setExample] = useState<boolean>(true). Agora, caso estejamos falando de um objeto, você teria que tipar cada propriedade desse objeto. Caso seja um array de objetos, assim como sendo apenas um objeto, você precisa tipar o objeto e declarar que é um array.",
+        "code": [
+          "interface IExample {id: string; title: string; status: string; created_at?: string; updated_at?: string; } [example, setExample] = useState<IExample>({} as IExample)",
+          "interface IExampleArray { id: string; title: string;  status: string;  created_at?: string;  updated_at?: string;} [exampleArray, setExampleArray] = useState<IExampleArray>([] as IExampleArray)"
+        ]
       },
-      "created_at": "",
-      "updated_at": "",
-      "tags": ["hooks"],
-      "likes": 0,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "title": "Como tipar um useState",
-      "content": {
-        "text": "...",
-        "code": "..."
-      },
-      "created_at": "",
-      "updated_at": "",
-      "tags": ["interface", "functions"],
-      "userId": 1,
+      "created_at": "01/09/2022",
+      "updated_at": "01/09/2022",
+      "tags": [
+        "state"
+      ],
+      "userId": 4,
       "id": 2,
       "likes": 0
+    },
+    {
+      "title": "Como tipar uma função?",
+      "content": {
+        "text": "É possível tipar tanto os parâmetros de uma função, como o seu retorno. Caso o retorno da função não seja um valor explícito, ou seja, não retorne uma string ou number, por exemplo, o tipo correto a ser implementado para o retorno da função é o void. Vale lembrar que ao tipar o retorno da sua função como void, é possível que o retorno seja qualquer valor(string, boleean…), mas será ignorado pelo typescript.",
+        "code": [
+          "function soma (a:number, b:number):number {return a + b} const exemplo = ():void => {console.log('exemplo')}"
+        ]
+      },
+      "created_at": "01/09/2022",
+      "updated_at": "01/09/2022",
+      "tags": [
+        "state"
+      ],
+      "likes": 0,
+      "id": 4,
+      "userId": 4
+    },
+    {
+      "title": "Como tipar um useState?",
+      "content": {
+        "text": "O formato do state todo mundo já conhece: [example, setExample] = useState(''). Caso seja apenas uma string, você pode tipar assim: [example, setExample] = useState<string>(“”). (No entanto o typescript já deduziria que a tipagem é string, então não é obrigatório colocar o <string>. Caso seja apenas um booleano, você pode tipar assim: [example, setExample] = useState<boolean>(true). Agora, caso estejamos falando de um objeto, você teria que tipar cada propriedade desse objeto. Caso seja um array de objetos, assim como sendo apenas um objeto, você precisa tipar o objeto e declarar que é um array.",
+        "code": [
+          "interface IExample {id: string; title: string; status: string; created_at?: string; updated_at?: string; } [example, setExample] = useState<IExample>({} as IExample)",
+          "interface IExampleArray { id: string; title: string;  status: string;  created_at?: string;  updated_at?: string;} [exampleArray, setExampleArray] = useState<IExampleArray>([] as IExampleArray)"
+        ]
+      },
+      "created_at": "01/09/2022",
+      "updated_at": "01/09/2022",
+      "tags": [
+        "state"
+      ],
+      "likes": 0,
+      "id": 5,
+      "userId": 4
     }
   ],
   "comments": [
     {
-      "id": 1,
       "userId": 1,
-      "content": "...",
+      "content": "Este é um conteúdo editado",
       "created_at": "...",
-      "solutionId": 1
+      "solutionId": 2,
+      "id": 2
     }
   ]
 }

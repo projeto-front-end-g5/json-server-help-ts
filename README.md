@@ -186,7 +186,7 @@ Rotas que necessitam de autorização(token) deve ser informado no cabeçalho da
 
 2. o campo "userId": é o ID do usuário que estiver criando a solução.
 
-<h2 align ='center'> Atualizando a solução </h2>
+<h2 align ='center'> Atualizar solução </h2>
 
 `PATCH /solutions/id (id do evento a ser editado) - FORMATO DA REQUISIÇÃO`
 
@@ -227,11 +227,74 @@ Rotas que necessitam de autorização(token) deve ser informado no cabeçalho da
 }
 ```
 
-<h2 align ='center'> Deletando a solução </h2>
+<h2 align ='center'> Deletar solução </h2>
 
 `DELETE /solutions/id (id do evento a ser editado) - Não é necessário passar corpo na requisição!`
 
-<h2 align ='center'> Atualizando o usuário </h2>
+<h2 align ='center'> Criar comentário </h2>
+
+`POST /comments - FORMATO DA REQUISIÇÃO`
+
+```json
+{
+  {
+		"userId": 1,
+		"content": "...",
+		"created_at": "...",
+		"solutionId": 2
+	}
+
+}
+```
+
+`POST /comments - FORMATO DA RESPOSTA - STATUS 201`
+
+```json
+{
+  {
+    "userId": 1,
+    "content": "...",
+    "created_at": "...",
+    "solutionId": 2,
+    "id": 2
+  }
+}
+```
+
+<h2 align ='center'> Atualizar comentário </h2>
+
+`PATCH /comments/id (id do evento a ser editado) - FORMATO DA REQUISIÇÃO`
+
+```json
+{
+  {
+		"userId": 1,
+		"content": "Este é um conteúdo editado",
+		"created_at": "...",
+		"solutionId": 2
+	}
+}
+```
+
+`PATCH /comments/id - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+{
+  {
+    "userId": 1,
+    "content": "Este é um conteúdo editado",
+    "created_at": "...",
+    "solutionId": 2,
+    "id": 2
+  }
+}
+```
+
+<h2 align ='center'> Deletar comentário</h2>
+
+`Delete /comments/id (id do comentário a ser editado) - Não é necessário passar corpo na requisição!`
+
+<h2 align ='center'> Atualizar usuário </h2>
 
 `PATCH /users/id (id do Usuário a ser editado) - FORMATO DA REQUISIÇÃO`
 
@@ -256,7 +319,7 @@ Rotas que necessitam de autorização(token) deve ser informado no cabeçalho da
 }
 ```
 
-<h2 align ='center'> Deletando o Usuário</h2>
+<h2 align ='center'> Deletar Usuário</h2>
 
 `Delete /users/id (id do Usuário a ser editado) - Não é necessário passar corpo na requisição!`
 
