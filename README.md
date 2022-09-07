@@ -12,7 +12,7 @@ Esta é a API da aplicação Help TS - um banco de dados pensado em auxiliar os 
 
 A API tem um total de XX endpoints, sendo possível transitar entre usuários, soluções e comentários das soluções.
 
-A URL base da API é https://json-server-project-help-ts.herokuapp.com/
+A URL base da API é https://json-server-project-help-ts.herokuapp.com
 
 ## Rotas que não precisam de autenticação
 
